@@ -1,0 +1,22 @@
+<mat-tab-group>
+  <mat-tab label="{{tabOne}}">
+      <mat-form-field>
+          <input matInput placeholder="Email" [(ngModel)] = "user.email">
+      </mat-form-field>
+      <pre>{{user | json}}</pre>
+  </mat-tab>
+  <mat-tab label="{{tabTwo}}">
+
+
+      
+      <!-- <input matInput placeholder="Email" value="{{user.email}}"> -->
+        
+    <mat-list>
+        <mat-list-item *ngFor="let launch of launches">
+            <h4 mat-line>{{launch.flight_number}} - {{launch.rocket.rocket_id}} - {{launch.rocket.first_stage.cores[0].core_serial }}</h4>
+        </mat-list-item>
+    </mat-list>
+
+
+  </mat-tab>
+</mat-tab-group>
